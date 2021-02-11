@@ -1,0 +1,20 @@
+.jokes_wrapper {
+    border-bottom: dotted;
+}
+#jokesRes p { 
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #E96228;
+}
+
+.footer_wrapper {
+    background-color: rgb(238, 238, 238);
+}
+.footerCont {
+    display: flex;
+    align-items: center;
+}
+.fa-github {
+    font-size: 50px;
+    color: #E96228;
+}
