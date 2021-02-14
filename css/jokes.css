@@ -18,3 +18,7 @@
     font-size: 50px;
     color: #E96228;
 }
+
+.hide {
+    display: none;
+}

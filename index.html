@@ -53,7 +53,7 @@
       <div class="row max-height justify-content-center align-items-center">
         <div class="col-10 mx-auto mx banner text-center">
           <h1 class="text-capitalize">Misha and Tomo <strong class="banner-title ">present...</strong></h1>
-          <a href="#store" class="btn banner-link text-uppercase my-2">explore</a> 
+          <a href="#store" class="btn banner-link text-uppercase my-2">Shop now!</a> 
 
         </div>
         <div id="cart" class="cart">
@@ -134,11 +134,11 @@
       <!--filter buttons -->
       <div class="row">
         <div class=" col-lg-8 mx-auto mx d-flex justify-content-around my-2 sortBtn flex-wrap">
-          <a class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2" data-filter="all"> all</a>
-          <a class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2" data-filter="filterBody">Body</a>
-          <a class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2" data-filter="filterFace">Face</a>
-          <a class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2" data-filter="filterHand">Hands</a>
-          <a class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2" data-filter="filterFun">Fun</a>
+          <button class="btn btn-outline-secondary btn-black text-uppercase filterBtn btnAll m-2"> all items</button>
+          <button class="btn btn-outline-secondary btn-black text-uppercase filterBtn btnBody m-2">Body</button>
+          <button class="btn btn-outline-secondary btn-black text-uppercase filterBtn btnFace m-2">Face</button>
+          <button class="btn btn-outline-secondary btn-black text-uppercase filterBtn btnHands m-2">Hands</button>
+          <!-- <a class="btn btn-outline-secondary btn-black text-uppercase filterBtn m-2">Fun</a> -->
         </div>
       </div>
       <!-- search box -->
@@ -160,7 +160,7 @@
       <!-- store  items-->
       <div class="row" class="store-items" id="store-items">
         <!-- single item -->
-        <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item sweets" data-item="sweets">
+        <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item sweets filtrFace noBody noHands" data-item="sweets">
           <div class="card ">
             <div class="img-container">
               <img src="img/hero.jpeg" class="card-img-top store-img" alt="">
@@ -179,7 +179,7 @@
         </div>
         <!--end of single store item-->
         <!-- single item -->
-        <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item cupcakes" data-item="cupcakes">
+        <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item cupcakes filtrFace noBody noHands" data-item="cupcakes">
           <div class="card ">
             <div class="img-container">
               <img src="img/cos-4.jpeg" class="card-img-top store-img" alt="">
@@ -199,7 +199,7 @@
         </div>
         <!--end of single store item-->
         <!-- single item -->
-        <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item cakes" data-item="cakes">
+        <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item cakes filtrFace noBody noHands" data-item="cakes">
           <div class="card ">
             <div class="img-container">
               <img src="img/cos-1.jpeg" class="card-img-top store-img" alt="">
@@ -219,7 +219,7 @@
         </div>
         <!--end of single store item-->
         <!-- single item -->
-        <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item doughnuts" data-item="dougnuts">
+        <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item doughnuts filtrBody noFace noHands" data-item="dougnuts">
           <div class="card ">
             <div class="img-container">
               <img src="img/cos-7.jpeg" class="card-img-top store-img" alt="">
@@ -239,7 +239,7 @@
         </div>
         <!--end of single store item-->
         <!-- single item -->
-        <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item sweets" data-item="sweets">
+        <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item sweets filtrFace noBody noHands" data-item="sweets">
           <div class="card ">
             <div class="img-container">
               <img src="img/cos-11.jpeg" class="card-img-top store-img" alt="">
@@ -259,7 +259,7 @@
         </div>
         <!--end of single store item-->
         <!-- single item -->
-        <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item cupcakes" data-item="cupcakes">
+        <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item cupcakes filtrBody noFace noHands" data-item="cupcakes">
           <div class="card ">
             <div class="img-container">
               <img src="img/cos-5.jpeg" class="card-img-top store-img" alt="">
@@ -278,7 +278,7 @@
         </div>
         <!--end of single store item-->
         <!-- single item -->
-        <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item cakes" data-item="cakes">
+        <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item cakes filtrHand noBody noFace" data-item="cakes">
           <div class="card ">
             <div class="img-container">
               <img src="img/cos-2.jpeg" class="card-img-top store-img" alt="">
@@ -298,7 +298,7 @@
         </div>
         <!--end of single store item-->
         <!-- single item -->
-        <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item doughnuts" data-item="dougnuts">
+        <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item doughnuts filtrBody noFace noHands" data-item="dougnuts">
           <div class="card ">
             <div class="img-container">
               <img src="img/cos-8.jpeg" class="card-img-top store-img" alt="">
@@ -318,7 +318,7 @@
         </div>
         <!--end of single store item-->
         <!-- single item -->
-        <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item sweets" data-item="sweets">
+        <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item sweets filtrBody noFace noHands" data-item="sweets">
           <div class="card ">
             <div class="img-container">
               <img src="img/cos-12.jpeg" class="card-img-top store-img" alt="">
@@ -338,7 +338,7 @@
         </div>
         <!--end of single store item-->
         <!-- single item -->
-        <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item cupcakes" data-item="cupcakes">
+        <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item cupcakes filtrFace noBody noHands" data-item="cupcakes">
           <div class="card ">
             <div class="img-container">
               <img src="img/cos-6.jpeg" class="card-img-top store-img" alt="">
@@ -357,7 +357,7 @@
         </div>
         <!--end of single store item-->
         <!-- single item -->
-        <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item cakes" data-item="cakes">
+        <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item cakes filtrFace noBody noHands" data-item="cakes">
           <div class="card ">
             <div class="img-container">
               <img src="img/cos-3.jpeg" class="card-img-top store-img" alt="">
@@ -366,7 +366,7 @@
               </span>
             </div>
             <div class="card-body">
-              <div class="card-text d-flex justify-content-between text-capitalize">
+              <div class="card-text d-flex justify-content-between text-capitalize ">
                 <h5 id="store-item-name">Lip gloss</h5>
                 <h5 class="store-item-value">$ <strong id="store-item-price" class="font-weight-bold">15</strong></h5>
               </div>
@@ -376,7 +376,7 @@
         </div>
         <!--end of single store item-->
         <!-- single item -->
-        <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item doughnuts" data-item="dougnuts">
+        <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item doughnuts filtrFace noBody noHands" data-item="dougnuts">
           <div class="card ">
             <div class="img-container">
               <img src="img/cos-9.jpeg" class="card-img-top store-img" alt="">
