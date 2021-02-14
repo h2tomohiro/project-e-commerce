@@ -1,3 +1,6 @@
+const finalMoney = localStorage.getItem('finalMoney');
+document.getElementById("cart-total").textContent = finalMoney;
+
 (function () {
     const cartInfo = document.getElementById('cart-info');
     const cart = document.getElementById('cart');
@@ -7,17 +10,17 @@
     })
   })();
 
-  (function () {
-    const cartItem = document.getElementsByClassName("cart-item");
-    const clearButton = document.getElementById("clear-cart");
+(function () {
+  const cartItem = document.getElementsByClassName("cart-item");
+  const clearButton = document.getElementById("clear-cart");
 
-    clearButton.addEventListener('click', function () {
-      while (cartItem.length) {
-        cartItem.item(0).remove()
-      }
-      showTotals();
-    });
-  })();
+  clearButton.addEventListener('click', function () {
+    while (cartItem.length) {
+      cartItem.item(0).remove()
+    }
+    showTotals();
+  });
+})();
 
 
   (function () {
@@ -85,8 +88,11 @@
       return total;
     }, 0);
     const finalMoney = totalMoney.toFixed(2);
+    localStorage.setItem("finalMoney", finalMoney);
+    localStorage.setItem("total", total);
+    // storageFinalMoney = localStorage.getItem('finalMoney');
 
-    document.getElementById("cart-total").textContent = finalMoney;
+    document.getElementById("cart-total").textContent = finalMoney
     document.querySelector(".item-total").textContent = finalMoney;
     document.getElementById("item-count").textContent = total.length;
   }
