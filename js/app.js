@@ -69,19 +69,8 @@
         const cart = document.getElementById("cart");
         const total = document.querySelector(".cart-total-container");
 
-        // cartItems = []
-        // cartItems.push(cartItem)
-        // console.log(cartItems);
-
-        localStorage.setItem("cart", cart);
-        localStorage.setItem("totalContainer", total);
-        localStorage.setItem("cartItem", cartItem.outerHTML);
-        // localStorage.setItem("cartItems", cartItems);
-
         cart.insertBefore(cartItem, total);
 
-        test = cart.insertBefore(cartItem, total);
-        localStorage.setItem("test", cartItem.outerHTML);
         alert("item added to the cart");
         showTotals();
         removeItem();
@@ -119,25 +108,11 @@ document.getElementById("cart-total").textContent = finalMoney;
 document.querySelector(".item-total").textContent = finalMoney;
 document.getElementById("item-count").textContent = total;
 
-// const cart = localStorage.getItem("cart");
-// const totalContainer = localStorage.getItem("totalContainer");
-// const cartItem = localStorage.getItem("cartItem");
-// document.getElementById("cart-item").innerHTML = cartItem;
 
-// cart.insertBefore(cartItem, totalContainer);
-
-
-
-var items = JSON.parse(localStorage.getItem("items"))//ローカルストレージの商品データの配列
-// ele = document.getElementById('js_shopping_list'),//カートの商品を追加する要素
-// fragment = document.createDocumentFragment(),//DOMの追加処理用のフラグメント
+let items = JSON.parse(localStorage.getItem("items"))
 
 if (items) {
-  // カート商品の数分、要素を生成
   for (var i = 0; i < items.length; i++) {
-    // var li = document.createElement('li'),
-    // h2 = document.createElement('h2'),
-    // price = document.createElement('div');
     const cartItem = document.createElement("div");
     cartItem.classList.add(
       'cart-item',
@@ -163,18 +138,6 @@ if (items) {
     const total = document.querySelector(".cart-total-container");
     cart.insertBefore(cartItem, total);
     removeItem()
-    // //生成した要素にクラスを追加
-    // price.classList.add('price');
-
-    // //要素に商品データを追加
-    // h2.appendChild(document.createTextNode(items[i].name));
-    // price.appendChild(document.createTextNode(items[i].price));
-
-    // //商品名と価格の要素をliに追加
-    // li.appendChild(h2);
-    // li.appendChild(price);
-    // fragment.appendChild(li);
-
   }
 }
 
@@ -192,20 +155,3 @@ function removeItem() {
     });
   });
 };
-
-
-
-// (function () {
-//   const trashBtn = document.querySelectorAll(".cart-item-remove");
-
-//   trashBtn.forEach(function (trash) {
-//     trash.addEventListener('click', function (event) {
-//       if (event.target.parentElement.classList.contains('cart-item-remove')) {
-//         let itemToMove = event.target.parentElement.parentElement;
-//         itemToMove.remove();
-
-//         showTotals();
-//       }
-//     });
-//   });
-// })();
