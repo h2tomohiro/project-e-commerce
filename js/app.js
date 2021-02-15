@@ -112,21 +112,6 @@ function showTotals() {
   document.getElementById("item-count").textContent = total.length;
 }
 
-function removeItem() {
-  const trashBtn = document.querySelectorAll(".cart-item-remove");
-
-  trashBtn.forEach(function (trash) {
-    trash.addEventListener('click', function (event) {
-      if (event.target.parentElement.classList.contains('cart-item-remove')) {
-        let itemToMove = event.target.parentElement.parentElement;
-        itemToMove.remove();
-
-        showTotals();
-      }
-    });
-  });
-};
-
 const finalMoney = localStorage.getItem('finalMoney');
 const total = localStorage.getItem('total');
 
@@ -177,6 +162,7 @@ if (items) {
     const cart = document.getElementById("cart");
     const total = document.querySelector(".cart-total-container");
     cart.insertBefore(cartItem, total);
+    removeItem()
     // //生成した要素にクラスを追加
     // price.classList.add('price');
 
@@ -191,3 +177,35 @@ if (items) {
 
   }
 }
+
+function removeItem() {
+  const trashBtn = document.querySelectorAll(".cart-item-remove");
+
+  trashBtn.forEach(function (trash) {
+    trash.addEventListener('click', function (event) {
+      if (event.target.parentElement.classList.contains('cart-item-remove')) {
+        let itemToMove = event.target.parentElement.parentElement;
+        itemToMove.remove();
+
+        showTotals();
+      }
+    });
+  });
+};
+
+
+
+// (function () {
+//   const trashBtn = document.querySelectorAll(".cart-item-remove");
+
+//   trashBtn.forEach(function (trash) {
+//     trash.addEventListener('click', function (event) {
+//       if (event.target.parentElement.classList.contains('cart-item-remove')) {
+//         let itemToMove = event.target.parentElement.parentElement;
+//         itemToMove.remove();
+
+//         showTotals();
+//       }
+//     });
+//   });
+// })();
