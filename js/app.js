@@ -139,6 +139,7 @@ if (items) {
     cart.insertBefore(cartItem, total);
     removeItem()
   }
+  localStorage.setItem("items", JSON.stringify(save_items));
 }
 
 function removeItem() {
