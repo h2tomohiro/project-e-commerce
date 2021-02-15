@@ -15,8 +15,7 @@
     while (cartItem.length) {
       cartItem.item(0).remove()
     }
-    localStorage.removeItem('finalMoney');
-    localStorage.removeItem('total');
+    localStorage.clear();
     showTotals();
   });
 })();
@@ -40,7 +39,7 @@
         let finalPrice = price.slice(1).trim();
         item.price = finalPrice
 
-        let cartItem = document.createElement("div");
+        const cartItem = document.createElement("div");
         cartItem.classList.add(
           'cart-item',
           'd-flex',
@@ -64,6 +63,11 @@
         const cart = document.getElementById("cart");
         const total = document.querySelector(".cart-total-container");
 
+
+        localStorage.setItem("cart", cart);
+        localStorage.setItem("totalContainer", total);
+        localStorage.setItem("cartItem", cartItem.outerHTML);
+
         cart.insertBefore(cartItem, total);
         alert("item added to the cart");
         showTotals();
@@ -71,7 +75,6 @@
       }
     });
   });
-
 })();
 
 function showTotals() {
@@ -116,3 +119,11 @@ const total = localStorage.getItem('total');
 document.getElementById("cart-total").textContent = finalMoney;
 document.querySelector(".item-total").textContent = finalMoney;
 document.getElementById("item-count").textContent = total;
+
+const cart = localStorage.getItem("cart");
+const totalContainer = localStorage.getItem("totalContainer");
+const cartItem = localStorage.getItem("cartItem");
+document.getElementById("cart-item").innerHTML = cartItem;
+
+
+// cart.insertBefore(cartItem, totalContainer);
