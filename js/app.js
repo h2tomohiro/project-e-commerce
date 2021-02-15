@@ -101,6 +101,21 @@ function showTotals() {
   document.getElementById("item-count").textContent = total.length;
 }
 
+// function removeItem() {
+//   const trashBtn = document.querySelectorAll(".cart-item-remove");
+
+//   trashBtn.forEach(function (trash) {
+//     trash.addEventListener('click', function (event) {
+//       if (event.target.parentElement.classList.contains('cart-item-remove')) {
+//         let itemToMove = event.target.parentElement.parentElement;
+//         itemToMove.remove();
+
+//         showTotals();
+//       }
+//     });
+//   });
+// };
+
 const finalMoney = localStorage.getItem('finalMoney');
 const total = localStorage.getItem('total');
 
@@ -109,8 +124,7 @@ document.querySelector(".item-total").textContent = finalMoney;
 document.getElementById("item-count").textContent = total;
 
 
-const items = JSON.parse(localStorage.getItem("items"))
-
+let items = JSON.parse(localStorage.getItem("items"))
 
 for (var i = 0; i < items.length; i++) {
   const cartItem = document.createElement("div");
@@ -140,17 +154,39 @@ for (var i = 0; i < items.length; i++) {
   removeItem()
 }
 
+
 function removeItem() {
   const trashBtn = document.querySelectorAll(".cart-item-remove");
 
-  trashBtn.forEach(function (trash) {
+  trashBtn.forEach(function (trash, index) {
     trash.addEventListener('click', function (event) {
       if (event.target.parentElement.classList.contains('cart-item-remove')) {
         let itemToMove = event.target.parentElement.parentElement;
         itemToMove.remove();
-
+        save_items.splice(index, 1);
+        localStorage.setItem("items", JSON.stringify(save_items));
         showTotals();
       }
     });
   });
 };
+
+// function removeItems() {
+//   const cartBtn = document.querySelectorAll(".cart-item-remove");
+//   cartBtn.forEach(function (btn, index) {
+//     btn.addEventListener('click', function () {
+//       save_items.splice(index, 1);
+//       localStorage.setItem("items", JSON.stringify(save_items));
+//   });
+// });
+
+
+// (function () {
+//   const cartBtn = document.querySelectorAll(".cart-item-remove");
+//   cartBtn.forEach(function (btn, index) {
+//     btn.addEventListener('click', function () {
+//     save_items.splice(index, 1);
+//     localStorage.setItem("items", JSON.stringify(save_items));
+//     });
+//   });
+// })();
