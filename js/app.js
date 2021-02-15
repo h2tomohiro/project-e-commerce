@@ -23,7 +23,7 @@
 
 (function () {
   const cartBtn = document.querySelectorAll(".store-item-icon");
-
+  save_items = [];
   cartBtn.forEach(function (btn) {
     btn.addEventListener('click', function (event) {
       if (event.target.parentElement.classList.contains('store-item-icon')) {
@@ -38,6 +38,12 @@
         let price = event.target.parentElement.parentElement.nextElementSibling.children[0].children[1].textContent;
         let finalPrice = price.slice(1).trim();
         item.price = finalPrice
+
+        save_items.push({
+          img: item.img,
+          name: name,
+          price: price
+        });
 
         const cartItem = document.createElement("div");
         cartItem.classList.add(
@@ -63,16 +69,24 @@
         const cart = document.getElementById("cart");
         const total = document.querySelector(".cart-total-container");
 
+        // cartItems = []
+        // cartItems.push(cartItem)
+        // console.log(cartItems);
 
         localStorage.setItem("cart", cart);
         localStorage.setItem("totalContainer", total);
         localStorage.setItem("cartItem", cartItem.outerHTML);
+        // localStorage.setItem("cartItems", cartItems);
 
         cart.insertBefore(cartItem, total);
+
+        test = cart.insertBefore(cartItem, total);
+        localStorage.setItem("test", cartItem.outerHTML);
         alert("item added to the cart");
         showTotals();
         removeItem();
       }
+      localStorage.setItem("items", JSON.stringify(save_items));
     });
   });
 })();
@@ -120,10 +134,9 @@ document.getElementById("cart-total").textContent = finalMoney;
 document.querySelector(".item-total").textContent = finalMoney;
 document.getElementById("item-count").textContent = total;
 
-const cart = localStorage.getItem("cart");
-const totalContainer = localStorage.getItem("totalContainer");
-const cartItem = localStorage.getItem("cartItem");
-document.getElementById("cart-item").innerHTML = cartItem;
-
+// const cart = localStorage.getItem("cart");
+// const totalContainer = localStorage.getItem("totalContainer");
+// const cartItem = localStorage.getItem("cartItem");
+// document.getElementById("cart-item").innerHTML = cartItem;
 
 // cart.insertBefore(cartItem, totalContainer);
