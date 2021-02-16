@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Alice&display=swap');
 
-
 :root {
   --mainOrange: #E96228;
   --mainYellow: rgb(249, 228, 148);
@@ -15,7 +14,7 @@ body {
   background: var(--mainWhite);
   color: var(--mainBlack);
 }
-/* nav links */
+
 .navbar-toggler {
   outline: none !important;
 }
@@ -31,14 +30,7 @@ body {
 .nav-link:hover {
   color: var(--mainBlack);
 }
-/* .nav-item{
-  color: var(--mainBlack);
-  font-size: 0.8rem;
-  transition: all 1.2s ease-in-out;
-} */
 
-/* end of nav links */
-/* info icons */
 .cart-info__icon {
   color: var(--mainBlack);
   cursor: pointer;
@@ -59,8 +51,6 @@ body {
 .cart-info:hover .cart-info__icon {
   color: var(--mainWhite);
 }
-/* end of info icons */
-/* banner */
 
 .max-height {
   min-height: calc(100vh - 76px);
@@ -85,8 +75,7 @@ body {
   background: var(--mainBlack);
   color: var(--mainOrange);
 }
-/* endo of banner */
-/* cart  */
+
 .cart {
   position: absolute;
   min-height: 10rem;
@@ -106,8 +95,6 @@ body {
   transition: all 2s ease-in-out;
 }
 
-/* end of cart */
-/* cart item */
 .cart-item-remove {
   color: var(--mainOrange);
   transition: all 1s ease-in-out;
@@ -119,8 +106,7 @@ body {
 #cart-item-price {
   font-size: 0.8rem;
 }
-/* cart item */
-/* cart buttons */
+
 .btn-pink {
   color: var(--mainOrange) !important;
   border-color: var(--mainOrange) !important;
@@ -137,9 +123,7 @@ body {
   background: var(--mainOrange) !important;
   color: var(--mainBlack) !important;
 }
-/* end of cart buttons */
 
-/* about */
 .about-img__container {
   position: relative;
 }
@@ -159,9 +143,6 @@ body {
   left: 0;
 }
 
-/*end of  about */
-
-/* store items */
 .store {
   background: var(--mainGrey);
 }
@@ -195,13 +176,11 @@ body {
 .store-item-value {
   color: --mainYellow;
 }
-/*end of  store items */
+
 .search-box {
   background: var(--mainOrange);
   color: var(--mainBlack);
 }
-
-/* ligthbox */
 
 .lightbox-container {
   position: fixed;
