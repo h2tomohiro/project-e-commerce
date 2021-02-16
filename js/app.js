@@ -1,13 +1,17 @@
-(function () {
-    const cartInfo = document.getElementById('cart-info');
-    const cart = document.getElementById('cart');
+cartToggle()
+clearItems();
+addItems()
 
-    cartInfo.addEventListener('click', function () {
-      cart.classList.toggle('show-cart');
-    })
-  })();
+function cartToggle() {
+  const cartInfo = document.getElementById('cart-info');
+  const cart = document.getElementById('cart');
 
-(function () {
+  cartInfo.addEventListener('click', function () {
+    cart.classList.toggle('show-cart');
+  })
+}
+
+function clearItems(){
   const cartItem = document.getElementsByClassName("cart-item");
   const clearButton = document.getElementById("clear-cart");
 
@@ -18,9 +22,9 @@
     localStorage.clear();
     showTotals();
   });
-})();
+}
 
-(function () {
+function addItems() {
   const cartBtn = document.querySelectorAll(".store-item-icon");
   save_items = [];
   cartBtn.forEach(function (btn) {
@@ -41,7 +45,7 @@
         save_items.push({
           img: item.img,
           name: name,
-          price: price
+          price: finalPrice
         });
 
         const cartItem = document.createElement("div");
@@ -77,10 +81,11 @@
       localStorage.setItem("items", JSON.stringify(save_items));
     });
   });
-})();
+}
 
 function showTotals() {
   const total = [];
+  // const moneyTotal = [];
   const items = document.querySelectorAll(".cart-item-price");
 
   items.forEach(function (item) {
@@ -91,9 +96,11 @@ function showTotals() {
     total += item;
     return total;
   }, 0);
+
   const finalMoney = totalMoney;
   localStorage.setItem("finalMoney", finalMoney);
   localStorage.setItem("total", total.length);
+  localStorage.setItem("totalMoney", totalMoney);
 
   document.getElementById("cart-total").textContent = finalMoney
   document.querySelector(".item-total").textContent = finalMoney;
@@ -147,7 +154,7 @@ function removeItem() {
       if (event.target.parentElement.classList.contains('cart-item-remove')) {
         let itemToMove = event.target.parentElement.parentElement;
         itemToMove.remove();
-        save_items.splice(index, 1);
+        save_items.splice(index);
         localStorage.setItem("items", JSON.stringify(save_items));
         showTotals();
       }
