@@ -1,7 +1,3 @@
-cartToggle()
-clearItems();
-addItems()
-
 function cartToggle() {
   const cartInfo = document.getElementById('cart-info');
   const cart = document.getElementById('cart');
@@ -83,9 +79,12 @@ function addItems() {
   });
 }
 
+cartToggle()
+clearItems();
+addItems()
+
 function showTotals() {
   const total = [];
-  // const moneyTotal = [];
   const items = document.querySelectorAll(".cart-item-price");
 
   items.forEach(function (item) {
@@ -109,13 +108,11 @@ function showTotals() {
 
 const finalMoney = localStorage.getItem('finalMoney');
 const total = localStorage.getItem('total');
+const items = JSON.parse(localStorage.getItem("items"))
 
 document.getElementById("cart-total").textContent = finalMoney;
 document.querySelector(".item-total").textContent = finalMoney;
 document.getElementById("item-count").textContent = total;
-
-
-let items = JSON.parse(localStorage.getItem("items"))
 
 for (var i = 0; i < items.length; i++) {
   const cartItem = document.createElement("div");
@@ -144,7 +141,6 @@ for (var i = 0; i < items.length; i++) {
   cart.insertBefore(cartItem, total);
   removeItem()
 }
-
 
 function removeItem() {
   const trashBtn = document.querySelectorAll(".cart-item-remove");
